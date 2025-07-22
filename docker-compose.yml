@@ -3,7 +3,7 @@ services:
    image: postgres:latest
    container_name: my_db_compose
    ports:
-    - "55433:5432"
+    - "50001:5432"
    environment:
     - POSTGRES_DB=kanit
     - POSTGRES_USER=kanit
@@ -16,7 +16,7 @@ services:
       - "8080:1337"
     environment:
       - DATABASE_HOST=192.168.1.55
-      - DATABASE_PORT=55432
+      - DATABASE_PORT=50001
       - DATABASE_NAME=kanit
       - DATABASE_USERNAME=kanit
       - DATABASE_PASSWORD=kanit
