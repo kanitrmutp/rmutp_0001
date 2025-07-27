@@ -15,8 +15,8 @@ services:
     ports:
       - "8080:1337"
     environment:
-      - DATABASE_HOST=192.168.1.55
-      - DATABASE_PORT=50001
+      - DATABASE_HOST=db
+      - DATABASE_PORT=5432
       - DATABASE_NAME=kanit
       - DATABASE_USERNAME=kanit
       - DATABASE_PASSWORD=kanit
