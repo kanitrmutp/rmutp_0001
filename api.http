@@ -2,40 +2,49 @@
 @username={{$env USER_NAME}}
 @email={{$env USER_EMAIL}}
 @password={{$env USER_PASSWORD}}
+@usernameupdate={{$env USER_UPDATE}}
+@Content-Type={{$env CONTENT_TYPE}}
+@tokenkey={{$env TOKEN}}
+@linkpost_Registeraccount={{$env LINKPOST_RET}}
+@linkget_alluser={{$env LINKGET_ALLUSER}}
+@linkpost_authen_login={{$env LINKPOST_AUTHEN}}
+@linkget_profile={{$env LINGET_PROFILE}}
+@linkput_update={{$env LINKPUT_UPDATE}}
 
 ### Identification Register account
-POST  http://localhost:8080/api/auth/local/register HTTP/1.1
-Content-Type: application/json
+POST  {{linkpost_Registeraccount}}
+Content-Type: {{Content-Type}}
 
 {
-    "username": "user_demo",
-    "email": "user_demo@example.com",
-    "password": "demo@password"
+    "username": "{{username}}",
+    "email": "{{email}}",
+    "password": "{{password}}"
 }
 
 
 ### Get all users
-GET http://localhost:8080/api/users HTTP/1.1
-Content-Type: application/json
+GET {{linkget_alluser}}
+Content-Type: {{Content-Type}}
 
 ### Authentication / Login
-POST  http://localhost:8080/api/auth/local HTTP/1.1
-Content-Type: application/json
+POST  {{linkpost_authen_login}}
+Content-Type: {{Content-Type}}
 
 {
-    "identifier": "user_demo@example.com",
-    "password": "demo@password"
+    "identifier": "{{email}}",
+    "password": "{{password}}"
 }
 
 ### Get profile
-GET http://localhost:8080/api/users/me HTTP/1.1
-Content-Type: application/json
-Authorization: jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzUzNjEyNzA1LCJleHAiOjE3NTYyMDQ3MDV9.TO89l9GL6Fica5JOlL2wgr6S4hOAyMGvupk4ISAtOmw
+GET {{linkget_profile}}
+Content-Type: {{Content-Type}}
+Authorization: {{tokenkey}}
 
 ### Update profile
-PUT http://localhost:8080/api/users/1 HTTP/1.1
-Content-Type: application/json
+PUT {{linkput_update}}
+Content-Type: {{Content-Type}}
+Authorization: {{tokenkey}}
 
 {
-    "username": "user_demo_update"
+    "username": "{{usernameupdate}}"
 }
