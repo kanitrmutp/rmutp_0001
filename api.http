@@ -1,15 +1,15 @@
 # Test API
-@username={{$env USER_NAME}}
-@email={{$env USER_EMAIL}}
-@password={{$env USER_PASSWORD}}
-@usernameupdate={{$env USER_UPDATE}}
-@Content-Type={{$env CONTENT_TYPE}}
-@tokenkey={{$env TOKEN}}
-@linkpost_Registeraccount={{$env LINKPOST_RET}}
-@linkget_alluser={{$env LINKGET_ALLUSER}}
-@linkpost_authen_login={{$env LINKPOST_AUTHEN}}
-@linkget_profile={{$env LINGET_PROFILE}}
-@linkput_update={{$env LINKPUT_UPDATE}}
+@username={{$dotenv USER_NAME}}
+@email={{$dotenv USER_EMAIL}}
+@password={{$dotenv USER_PASSWORD}}
+@usernameupdate={{$dotenv USER_UPDATE}}
+@Content-Type={{$dotenv CONTENT_TYPE}}
+@tokenkey={{$dotenv TOKEN}}
+@linkpost_Registeraccount={{$dotenv LINKPOST_RET}}
+@linkget_alluser={{$dotenv LINKGET_ALLUSER}}
+@linkpost_authen_login={{$dotenv LINKPOST_AUTHEN}}
+@linkget_profile={{$dotenv LINGET_PROFILE}}
+@linkput_update={{$dotenv LINKPUT_UPDATE}}
 
 ### Identification Register account
 POST  {{linkpost_Registeraccount}}
